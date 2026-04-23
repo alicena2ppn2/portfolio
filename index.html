@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f7fc;
+    --bg: #f0f0f7;
     --surface: #ffffff;
     --surface2: #f0f0f8;
     --accent: #5b4ef0;
@@ -23,8 +23,8 @@
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(91,78,240,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,78,240,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
   .container{max-width:860px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
   header{padding:80px 0 60px;}
-  .header-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease 0.1s forwards;}
-  h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;opacity:0;animation:fadeUp 0.6s ease 0.2s forwards;color:#6b6b9a;}
+  .header-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:1.9px;text-transform:uppercase;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease 0.1s forwards;}
+  h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:32px;opacity:0;animation:fadeUp 0.6s ease 0.2s forwards;color:#6b6b9a;}
   h1 span{display:block;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
   .header-desc{font-size:14px;color:var(--text-muted);max-width:480px;margin-bottom:32px;opacity:0;animation:fadeUp 0.6s ease 0.3s forwards;}
   .header-links{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.6s ease 0.4s forwards;}
@@ -37,7 +37,7 @@
   .chip:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 20px var(--glow);}
   .divider{height:1px;background:linear-gradient(90deg,var(--accent) 0%,transparent 60%);margin:8px 0 48px;opacity:0.3;}
   section{margin-bottom:64px;}
-  .section-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:1.9px;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:12px;}
   .section-label::after{content:'';flex:1;height:1px;background:var(--border);max-width:200px;}
   .skills-grid{display:flex;flex-wrap:wrap;gap:8px;}
   .skill-tag{padding:3px 9px;border-radius:3px;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.5px;font-weight:500;}
@@ -46,11 +46,9 @@
   .skill-tag.tool{background:rgba(217,119,6,0.13);color:#92490a;border:1px solid rgba(217,119,6,0.25);}
   .skill-tag.db{background:rgba(220,38,38,0.12);color:#b01a1a;border:1px solid rgba(220,38,38,0.25);}
   .project-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px 32px;margin-bottom:20px;position:relative;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;}
-  .project-card:hover{border-color:rgba(91,78,240,0.35);box-shadow:0 8px 40px rgba(91,78,240,0.07);}
-  .project-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:3px 0 0 3px;opacity:0;transition:opacity 0.3s;}
-  .project-card:hover::before{opacity:1;}
+  .project-card:hover{border-color:rgba(91,78,240,0.5);box-shadow:0 8px 40px rgba(91,78,240,0.1);}
   .project-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
-  .project-number{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);background:rgba(91,78,240,0.08);padding:2px 8px;border-radius:3px;letter-spacing:1px;}
+  .project-number{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);background:rgba(91,78,240,0.08);padding:2px 8px;border-radius:3px;letter-spacing:1px;border:1px solid rgba(91,78,240,0.25);}
   .project-period{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted);}
   .project-badge{font-size:10px;padding:2px 8px;border-radius:3px;background:rgba(13,148,136,0.08);color:var(--accent2);border:1px solid rgba(13,148,136,0.2);}
   .project-title{font-family:'Noto Sans KR',sans-serif;font-size:19px;font-weight:700;margin-bottom:6px;color:var(--text);letter-spacing:-0.3px;}
@@ -71,8 +69,8 @@
   .project-link{font-family:'DM Mono',monospace;font-size:11px;color:#5b4ef0;text-decoration:none;letter-spacing:1px;text-transform:uppercase;opacity:0.8;transition:all 0.2s;display:inline-flex;align-items:center;gap:4px;font-weight:400;}
   .project-link::after{content:'↗';font-size:12px;}
   .project-link:hover{opacity:1;color:#4a3dd4;font-weight:500;}
-  .activity-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:16px;transition:border-color 0.3s,box-shadow 0.3s;}
-  .activity-card:hover{border-color:rgba(91,78,240,0.3);box-shadow:0 8px 40px rgba(91,78,240,0.06);}
+  .activity-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:16px;transition:border-color 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;}
+  .activity-card:hover{border-color:rgba(91,78,240,0.5);box-shadow:0 8px 40px rgba(91,78,240,0.1);}
   .activity-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
   .activity-title{font-family:'Noto Sans KR',sans-serif;font-size:16px;font-weight:600;color:var(--text);}
   .activity-type{font-family:'DM Mono',monospace;font-size:10px;padding:3px 9px;border-radius:3px;flex-shrink:0;}
@@ -105,7 +103,7 @@
       </div>
     </div>
   </header>
-  <div class="divider"></div>
+
   <section>
     <p class="section-label">Skills</p>
     <div class="skills-grid">
